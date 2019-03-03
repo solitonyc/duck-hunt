@@ -1,21 +1,30 @@
-window.onload = function() {
-  const body = document.body;
-
-  console.log(body);
+window.onload = function () {
+  const body = document.body;  
 
   // 1. Create a <div> with the class "duck" and add it to the body.  Do this step by step
   // ( 1. create the element
+  let aDuck = document.createElement('div');
   //   2. add a class to the element
+  aDuck.setAttribute('class', 'duck') 
   //   3. append the element to the body )
-
+  body.appendChild(aDuck)
   // 2. Next, use setInterval to toggle the "flap" class on the duck every 250 ms (1/4 second)
   // https://www.w3schools.com/jsref/met_win_setinterval.asp
+
+  const wingFlap = function() {
+    aDuck.classList.toggle('flap')
+  }
+  setInterval(wingFlap, 250)
+  }
 
   // 3. Fantastic!  Now, let's move the duck using CSS "top" and "left". Create
   // a function `moveDuck` that takes a duck object as an argument and sets the
   // "top" and "left" CSS properties.
   // HINT: Use Math.random() * window.innerWidth    for "left"
   //       And Math.random() * window.innerHeight   for "top"
+  const moveDuck = function(left, top);
+  const left = Math.random() * window.innerWidth;
+  const top = Math.random() * window.innerHeight;
 
   // 4. Try making the duck move to a different location every second (what did we use to do this several lines up??)
 
@@ -56,4 +65,4 @@ window.onload = function() {
   //     direction the duck is flying and change the way the duck is facing
 
   // FIN. You win 1 trillion tokens.  Play the day away!
-};
+  //};
