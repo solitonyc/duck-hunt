@@ -18,20 +18,15 @@ window.onload = function () {
     liveDuck.classList.add('shot')
     setTimeout( () => {
       body.removeChild(liveDuck)
-  }, 2000)
+  }, 1000)
 })
   
   const wingFlap = function() {
     liveDuck.classList.toggle('flap')
   }
     setTimeOut( () => {
-      body.removeChild(liveDuck)
-    },2000)
-  }
-  setInterval( () => {
-    toggleFlap ()
-  }, 250)
-}
+      toggleFlap()
+    }, 250)
 
 
   // 3. Fantastic!  Now, let's move the duck using CSS "top" and "left". Create
@@ -39,13 +34,15 @@ window.onload = function () {
   // "top" and "left" CSS properties.
   // HINT: Use Math.random() * window.innerWidth    for "left"
   //       And Math.random() * window.innerHeight   for "top"
-  function randomPosition(liveDuck);
-  liveDuck.style.left = Math.random() * window.innerWidth) + "px"
-  liveDuck.style.top = Math.random() * window.innerHeight) + "px"
   
+  function randomPosition(liveDuck) {
+  liveDuck.style.left = Math.random() * window.innerWidth + "px"
+  liveDuck.style.top = Math.random() * window.innerHeight + "px"
+  }
+
   function moveDuck(liveDuck) {
-    liveDuck.style.left = Math.random() * window.innerWidth) + "px"
-    liveDuck.style.top = Math.random() * window.innerHeight) + "px" 
+    liveDuck.style.left = Math.random() * window.innerWidth + "px"
+    liveDuck.style.top = Math.random() * window.innerHeight + "px" 
   }
   setInterval( () => {
     toggleFlap ()
