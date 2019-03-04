@@ -16,11 +16,14 @@ window.onload = function () {
   
   liveDuck.addEventListener('click', () => {
     liveDuck.classList.add('shot')
-    setTimeout( () => )
-  })
+    setTimeout( () => {
+      body.removeChild(liveDuck)
+  }, 2000)
+})
   
   const wingFlap = function() {
     liveDuck.classList.toggle('flap')
+  }
     setTimeOut( () => {
       body.removeChild(liveDuck)
     },2000)
