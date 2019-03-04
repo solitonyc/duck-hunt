@@ -1,13 +1,6 @@
 window.onload = function () {
   const body = document.body;  
 
-  // 1. Create a <div> with the class "duck" and add it to the body.  Do this step by step
-  // ( 1. create the element
-  //   2. add a class to the element
-  //   3. append the element to the body )
-  // 2. Next, use setInterval to toggle the "flap" class on the duck every 250 ms (1/4 second)
-  // https://www.w3schools.com/jsref/met_win_setinterval.asp
-  
   function createDuck () {
   let liveDuck = document.createElement('div')
   liveDuck.setAttribute('class', 'duck') 
@@ -18,7 +11,7 @@ window.onload = function () {
     liveDuck.classList.add('shot')
     setTimeout( () => {
       body.removeChild(liveDuck)
-  }, 1000)
+  }, 2000)
 })
   
   const wingFlap = function() {
@@ -45,8 +38,9 @@ window.onload = function () {
     liveDuck.style.top = Math.random() * window.innerHeight + "px" 
   }
   setInterval( () => {
-    toggleFlap ()
-  }, 250)
+    moveDuck(liveDuck)
+  }, 1000)
+}
 
   // 4. Try making the duck move to a different location every second (what did we use to do this several lines up??)
 
@@ -88,3 +82,17 @@ window.onload = function () {
 
   // FIN. You win 1 trillion tokens.  Play the day away!
   //};
+
+for(let i=0; i<5;i++) {
+  createDuck()
+}
+function checkForWinner() {
+  let ducks = body.querySelectorAll('.duck')
+  if (ducks.length === 0) {
+    alert('You Win! Congratulations!')
+  }
+}
+setInterval(() => {
+  checkForWinner()
+}, 1000)
+}
